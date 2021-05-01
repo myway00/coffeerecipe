@@ -1,0 +1,16 @@
+<h1>레시피 내용 자세히 보기</h1>
+
+<div class = "posts">
+	{% if post.pub_date %} 
+	<div class = "date">
+		{{ post.pub_date }}
+	</div>
+	{% endif %}
+	<h1> {{ post.title }}</h1>
+    <p> {{ post.body|linebreaks}}</p>
+</div>
+
+
+<a href="{% url 'edit' index=post.pk %}" style="font-family: Arial; color: blue;">[ 수정하기 ]</a>&nbsp;
+<a href="{% url 'delete' pk=post.pk %}" style="font-family: Arial; color: blue;">[ 삭제하기 ]</a>&nbsp;
+<a href="{% url 'home' %}" style="font-family: Arial; color: blue;">[ 메인화면으로 돌아가기 ]</a>
