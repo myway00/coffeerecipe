@@ -1,0 +1,6 @@
+<h1>개인의 레시피를 공유하는 페이지입니다!</h1>
+
+<form method='POST' class='post-form'>{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">저장하기</button>
+</form>
