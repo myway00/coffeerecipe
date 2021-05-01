@@ -53,6 +53,7 @@ footer {
     height : 200px;
     background-color: rgba(165, 42, 42, 0.185);
 }
+
 </style>
 <html lang="en">
 <head>
@@ -63,27 +64,34 @@ footer {
     
     <title>커피 한잔 할래요?☕</title>
 </head>
+
 <body>
     <header class="mytitle"> 
  <a href="{% url 'new' %}" class="mytitle"> ☞레시피 공유하러 가볼까~?♡( ͡° ͜ʖ ͡°)☞</a>
     </header>
     <main>
         <div id="top"></div>
-        <div id="contatiner">
-           <img src="https://dimg.donga.com/wps/SPORTS/IMAGE/2021/03/12/105835803.2.jpg" alt="choijun" style="width:345px;height:345px;" class="center" >
-    <h1 id="coffee"> 어? 예쁘다 ㅎ </h1>
+        <div class="contatiner">
+        <br>
+           <img class ="choi" src="https://dimg.donga.com/wps/SPORTS/IMAGE/2021/03/12/105835803.2.jpg" alt="choijun" style="width:350px;height:490px;" class="center" >
+           <img class ="choi" src="https://dimg.donga.com/wps/SPORTS/IMAGE/2021/03/12/105835801.2.jpg" alt="choijun" style="width:350px;height:490px;" class="center" >
+           <img class ="choi" src="https://dimg.donga.com/wps/SPORTS/IMAGE/2021/03/12/105835903.2.jpg" alt="choijun" style="width:350px;height:490px;" class="center" >
+        </div>
+           <h1 id="coffee"> 어? 예쁘다 ㅎ </h1>
 안녕, 꼬마 공주👸 or 왕자님🤴 ( ͡° ͜ʖ ͡°)<br>
-    당신만의 특별한 레시피를 이곳에서 공유해주기로,<br>
-    그리고 다른 분들의 레시피를 구경해보기로, 약속 ( ͡~ ͜ʖ ͡°) ☆
-    <br>
+당신만의 특별한 레시피를 이곳에서 공유해주기로,<br>
+그리고 다른 분들의 레시피를 구경해보기로, 약속 ( ͡~ ͜ʖ ͡°) ☆
+<br>
 
 {% for post in posts_list %}
-    <a href = "{% url 'detail' index=post.pk %}">{{ post.title }}</a>
+    <a href = "{% url 'detail' index=post.pk %}">{{post.title}}</a>
     <p style="font-family: Arial;">- {{post.pub_date}}</p>
-    </p>
+    <p style="font-family: Arial;">{{post.body}}</p>
+
     <br>
     </main>
 
 </body>
+
 <hr>
 {% endfor %}
