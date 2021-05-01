@@ -24,3 +24,6 @@ class Content(models.Model):
         ('손에 담아마실게요', '손에 담아마실게요')
     ]
     size = models.CharField(max_length=30, choices=SIZE_CHOICES, default='아리아나그란데')
+
+    def summary(self):
+        return self.body[:20]
