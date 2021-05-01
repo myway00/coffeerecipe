@@ -1,6 +1,9 @@
-<h1>개인의 레시피를 공유하는 페이지입니다!</h1>
+<h1 style="font-family: Arial; color: rgb(134, 76, 0);">[ 여러분만의 레시피를 작성해주세요 ]</h1>
 
 <form method='POST' class='post-form'>{% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">저장하기</button>
+    <button type="submit"
+    style="color: white; background:rgb(136, 77, 0); border-radius:0.5em;">
+    저장하기</button>
+
 </form>
