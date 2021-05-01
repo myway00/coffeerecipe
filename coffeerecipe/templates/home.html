@@ -1,17 +1,100 @@
-<h1>당신의 커피 레시피를 알려주세요!</h1>
+{% load static %} 
+<style> 
+@font-face {
+    font-family: 'twaysky';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twaysky.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-<a href="{% url 'new' %}">[ 레시피 공유하기 ]</a>
-<br><br>
+@keyframes rainbowLink {     
+    0% { color: #ff2a2a; }
+    15% { color: #ff7a2a; }
+    30% { color: #ffc52a; }
+    45% { color: #43ff2a; }
+    60% { color: #2a89ff; }
+    75% { color: #202082; }
+    90% { color: #6b2aff; } 
+   100% { color: #e82aff; }
 
+}
+
+*{
+    font-family: 'twaysky';
+    box-sizing : border-box;
+}
+
+header {
+    font-family: 'twaysky';
+    height : 50px;
+    font-size : 30px;
+    background-color: rgb(167, 110, 36);
+    text-align : center;
+    margin : 0 auto;
+}
+main{
+    font-family: 'twaysky';
+    height : 800px;
+    background-color: blanchedalmond;
+    text-align : center;
+}
+
+.mytitle{
+    color: rgb(28, 88, 85);
+    text-align: center;
+    animation-duration: 3s; 
+    animation-name: rainbowLink; 
+    animation-iteration-count: infinite; 
+    font-family:'twaysky';
+}
+
+footer {
+    font-family: 'twaysky';
+    height : 200px;
+    background-color: rgba(165, 42, 42, 0.185);
+}
+</style>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>커피 한잔 할래요?☕</title>
+</head>
+<body>
+    <header class="mytitle"> 
+ <a href="{% url 'new' %}" class="mytitle"> ☞레시피 공유하러 가볼까~?♡( ͡° ͜ʖ ͡°)☞</a>
+    </header>
+    <main>
+        <div id="top"></div>
+        <div id="contatiner">
+           <img src="https://dimg.donga.com/wps/SPORTS/IMAGE/2021/03/12/105835803.2.jpg" alt="choijun" style="width:345px;height:345px;" class="center" >
+    <h1 id="coffee"> 어? 예쁘다 ㅎ </h1>
+안녕, 꼬마 공주👸 or 왕자님🤴 ( ͡° ͜ʖ ͡°)<br>
+    당신만의 특별한 레시피를 이곳에서 공유해주기로,<br>
+    그리고 다른 분들의 레시피를 구경해보기로, 약속 ( ͡~ ͜ʖ ͡°) ☆
 {% for post in posts_list %}
     <a href = "{% url 'detail' index=post.pk %}">{{ post.title }}</a>
     <br>
+    </main>
 
-    <!--
+</body>
+<hr>
+{% endfor %}
+<!--
+<h1>당신의 커피 레시피를 알려주세요!</h1>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<a href="{% url 'new' %}">[ 레시피 공유하기 ]</a>
+<br><br>
+{% for post in posts_list %}
+    <a href = "{% url 'detail' index=post.pk %}">{{ post.title }}</a>
+    <br>
+<hr>
+{% endfor %}
+
     <h3>{{post.title}}</h3>
     <p>{{post.pub_date}}</p>
     <p>{{post.body|linebreaks}}</p>
     -->
-
-    <hr>
-{% endfor %}
